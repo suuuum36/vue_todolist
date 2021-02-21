@@ -1,0 +1,8 @@
+{
+  "useTabs": false, //탭을 사용할때 빈칸으로 채움
+  "printWidth": 100, //파일 최대 길이 100
+  "tabWidth": 2, //탭의 빈칸 = 2칸
+  "trailingComma": "all", //나열 항목의 마지막에 항상 , 붙이기
+  "semi": true, //실행 줄 마지막에 항상 ; 붙이기
+  "singleQuote": true // 따옴표는 ''로 통일
+}
