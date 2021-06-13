@@ -9,18 +9,44 @@ const OrderForm = (props) => {
     const [quantity, setQuantity] = useState(null);
     const [side, setSide] = useState(null);
     let marketName = props.marketName;
+    let userName = props.userName;
 
     const onOrder = async (e) => {
         e.preventDefault();
-        if (localStorage.getItem('LOGIN_KEY')) {
-            const response = await order(price, quantity, props.marketName, side);
+        if (userName) {
+            if(side != null) {
+                if(marketName === 'snu-won' || marketName === 'uns-won') {
+                    if(price>= 1 && price % 10 === 0 && price!= null) {
+                        if(quantity>= 1 && quantity != null) {
+                            const response = await order(price, quantity, props.marketName, side);
+                            alert("주문이 완료되었습니다!")
+                        } else {
+                            alert("수량은 1개 이상 입력해주세요.")
+                        }
+                    } else {alert('snu-won과 uns-won은 금액을 10단위로 입력해주세요.')}
+                } else if (marketName === 'snu-uns') {
+                    if(price >= 1 && price!= null) {
+                        if(quantity>= 1 && quantity != null) {
+                            const response = await order(price, quantity, props.marketName, side);
+                            alert("주문이 완료되었습니다!")
+                        } else {
+                            alert("수량은 1개 이상 입력해주세요.")
+                        }
+                    } else {alert('snu-uns의 최소금액은 1 입니다.')}
+                }
+            } else {
+                alert("매수 혹은 매도를 선택해주세요.")
+            }
+            
+        } else {
+            alert('로그인을 해주세요.');
         }
     }
 
     let sideText; 
-    if(side=='buy') {
+    if(side ==='buy') {
         sideText = '매수'
-    } else if (side=='sell') {
+    } else if (side ==='sell') {
         sideText = '매도'
     } else {
         sideText = ''
@@ -29,9 +55,9 @@ const OrderForm = (props) => {
     return (
         <div className="orderDiv">
             <form className="create-order" onSubmit={onOrder}>
-                <div className="buy-sell">
-                    <Button className="buy-sell-button" onClick={e=> setSide('buy')}>Buy</Button>
-                    <Button className="buy-sell-button"onClick={e=> setSide('sell')}>Sell</Button>
+                <div className="buySell">
+                    <Button className="buySellButton" onClick={e=> setSide('buy')}>Buy</Button>
+                    <Button className="buySellButton"onClick={e=> setSide('sell')}>Sell</Button>
                 </div>
                 <div className="side">{sideText}</div>
                 <TextField size="small" id="filled-basic" label="price" variant="filled" type="number" onChange={e=> setPrice(e.target.value)}/>

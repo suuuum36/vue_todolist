@@ -14,11 +14,17 @@ const Assets = () => {
 
     return (
         <div>
-            <div className="my-asset">내 자산 확인하기</div>
+            <div className="myAsset">내 자산 확인하기</div>
             {
                 assets.map(asset => {
-                    return (<div>
-                        {asset.symbol} : {asset.quantity}
+                    return (
+                    <div className="assetDiv">
+                        <div className="assetSymbol">
+                            {asset.symbol} 
+                        </div>
+                        <div className="assetQuantity">
+                            {asset.quantity}
+                        </div>
                     </div>)
                 })
             }

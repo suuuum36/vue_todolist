@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {Button, ButtonGroup, TextField} from '@material-ui/core';
 import {useEffect, useState} from 'react';
@@ -15,7 +14,6 @@ function App() {
     const [market, setMarket] = useState(null);
 
 
-    let defaultMarket = 'snu-won';
     const SnuWon = 'snu-won';
     const UnsWon = 'uns-won';
     const SnuUns = 'snu-uns';
@@ -31,7 +29,7 @@ function App() {
     }, []);
 
     useEffect(() => {
-        loadMarket(defaultMarket)
+        loadMarket(SnuWon)
             .then(_market => {
                 setMarket(_market);
             })
@@ -87,7 +85,7 @@ function App() {
         Welcome = <div className="profileDiv"> <span className="user"> {user.name} </span> <span>님 환영합니다.</span> <Button onClick={logout}>로그아웃</Button> </div>
         AccountShow = ''
         AssetsShow = <Assets/>
-        MakeOrder = <OrderForm marketName={market.market.name}/>
+        MakeOrder = <OrderForm marketName={market.market.name} userName={user.name}/>
         MyOrder = <LoadOrder/>
 
         } else {
@@ -102,7 +100,7 @@ function App() {
         <div className="whole">
             <div className="left">
                 <div className="title">
-                    <div className="inner-title">
+                    <div className="innerTitle">
                         <h2>::</h2>
                         <h2>SNUCOIN</h2>
                     </div>

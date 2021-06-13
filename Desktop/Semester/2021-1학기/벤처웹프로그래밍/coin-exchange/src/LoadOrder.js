@@ -29,16 +29,17 @@ const LoadOrder = () => {
         console.log(e);
         if(window.confirm("주문을 취소하시겠습니까?")) {
             const res = await deleteOrder(e);
+            alert("주문이 취소되었습니다!")
         }
     }
 
     let statusText;
     const showStatus = (status) => {
-        if(status ==1) {
+        if(status === 1) {
             statusText = '체결완료'
-        } else if(status ==0) {
+        } else if(status ===0) {
             statusText = '체결보류'
-        } else if (status==-1) {
+        } else if (status ===-1) {
             statusText = '주문취소'
         }
     }
@@ -63,7 +64,7 @@ const showObject = filterObject.map((order) => {
         <div>{order.market.name}</div>
         <div>{order.price}</div>
         <div>{order.quantity}</div>
-        {order.status == 0 ? <button className={order._id} id="cancel" onClick={e=> DeleteOrder(e.target.className)}>취소</button> : <div className="forSpace"></div>}
+        {order.status === 0 ? <button className={order._id} id="cancel" onClick={e=> DeleteOrder(e.target.className)}>취소</button> : <div className="forSpace"></div>}
     </div>
     )
     
@@ -73,7 +74,7 @@ console.log(orderList);
 
     return (
         <div>
-            <div className="my-order"> 내 주문 확인하기 </div>
+            <div className="myOrder"> 내 주문 확인하기 </div>
             <div className="selectMarket">
                 <input type = "radio" value="snu-won uns-won snu-uns" onClick={e=> MarketChange(e.target.value)} name = "market" defaultChecked/> 모두보기
                 <input type="radio" value="snu-won" onClick={e=> MarketChange(e.target.value)} name = "market"/> SNU-WON

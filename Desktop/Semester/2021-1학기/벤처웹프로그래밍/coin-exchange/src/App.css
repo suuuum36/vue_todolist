@@ -2,6 +2,10 @@ h2 {
     margin-right: 5px;
 }
 
+.loginText {
+    color: #3f51b5;
+}
+
 .whole {
     display: flex;
     margin: auto;
@@ -20,7 +24,7 @@ h2 {
     border-radius: 5px;
 }
 
-.inner-title {
+.innerTitle {
     display: flex;
     width: fit-content;
     margin: auto;
@@ -93,7 +97,7 @@ span{
     height: fit-content;
 }
 
-.my-asset {
+.myAsset {
     background-color: #3f51b5;
     padding: 10px;
     font-size: 16px;
@@ -110,13 +114,13 @@ span{
     border-top: #3f51b5 1px solid;
 }
 
-.buy-sell {
+.buySell {
     display: flex;
     width: 100%;
     margin-top: 10px;
 }
 
-.buy-sell-button {
+.buySellButton {
     width: 50%;
 }
 
@@ -133,7 +137,7 @@ span{
     margin-bottom: 20px;
 }
 
-.my-order {
+.myOrder {
     background-color: #e1edf9;
     color: #3f51b5;
     font-size: 16px;
@@ -161,4 +165,28 @@ span{
     padding: 3px;
     width: 46px;
     cursor: pointer;
+}
+
+.assetDiv {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.assetSymbol {
+    background-color: #e1edf9;
+    border: 0px solid;
+    color: #3f51b5;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 3px;
+    padding: 3px;
+    width: 46px;
+    margin-right: 8px;
+    text-align: center;
+}
+
+.assetQuantity {
+    font-size: 16px;
+    padding: 3px;
+    text-align: center;
 }

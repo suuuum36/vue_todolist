@@ -17,7 +17,7 @@ const LoginForm = ( {loginComplete} ) => {
 
     return (
         <div>
-            <h3>Please Login</h3>
+            <h3 className="loginText">로그인하기</h3>
             <form className="login-form" noValidate autoComplete="off" onSubmit={onLogin}>
                 <TextField size="small" id="filled-basic" label="ID" variant="filled" onChange={e=> setName(e.target.value)}/>
                 <TextField size="small" id="filled-basic" label="password" variant="filled" type="password" onChange={e=> setPassword(e.target.value)}/>
