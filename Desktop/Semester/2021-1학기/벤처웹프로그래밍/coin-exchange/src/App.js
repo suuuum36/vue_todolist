@@ -18,7 +18,6 @@ function App() {
     const UnsWon = 'uns-won';
     const SnuUns = 'snu-uns';
 
-    console.log(markets)
     if(market) console.log(market.market.name)
 
     useEffect(() => {
@@ -35,6 +34,32 @@ function App() {
             })
     }, []);
 
+    // if(market) {
+    //     if(market.market.name === 'snu-won'){
+    //         const update = setInterval(() => {
+    //             loadMarket(SnuWon)
+    //                 .then(_market => {
+    //                     setMarket(_market);
+    //                 })
+    //         }, 5000);
+    //     } else if (market.market.name === 'uns-won') {
+    //         const update = setInterval(() => {
+    //             loadMarket(UnsWon)
+    //                 .then(_market => {
+    //                     setMarket(_market);
+    //                 })
+    //         }, 5000);
+    //     } else if (market.market.name === 'snu-uns') {
+    //         const update = setInterval(() => {
+    //             loadMarket(SnuUns)
+    //                 .then(_market => {
+    //                     setMarket(_market);
+    //                 })
+    //         }, 5000);
+    //     }
+    // } 
+
+    
 
     function ShowOrderBook1 () {
         loadMarket(SnuWon)
