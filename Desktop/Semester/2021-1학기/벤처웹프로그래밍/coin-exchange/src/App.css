@@ -1,0 +1,164 @@
+h2 {
+    margin-right: 5px;
+}
+
+.whole {
+    display: flex;
+    margin: auto;
+    width: fit-content;
+    margin-top: 40px;
+}
+
+.left {
+    margin-right: 100px;
+}
+
+.title{
+    background-color: #3f51b5;
+    margin-bottom: 20px;
+    color: white;
+    border-radius: 5px;
+}
+
+.inner-title {
+    display: flex;
+    width: fit-content;
+    margin: auto;
+}
+
+.orderBookButton {
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.market {
+    width: 100%;
+}
+
+.market > div{
+    width: 100%;
+}
+
+.marketName {
+    color: #3f51b5;;
+    font-size: 23px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.index {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #3f51b5;
+    color: white;
+    padding: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.orderList {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+.buyList {
+    color: #E12343;
+}
+
+.sellList {
+    color: #3f51b5
+}
+
+.profileDiv {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.user {
+    color: #3f51b5;
+    font-weight: 500;
+    margin-right: 3px;
+}
+
+span{
+    margin-top: auto;
+    margin-bottom: auto;
+    height: fit-content;
+}
+
+.my-asset {
+    background-color: #3f51b5;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.orderDiv {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-top: #3f51b5 1px solid;
+}
+
+.buy-sell {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.buy-sell-button {
+    width: 50%;
+}
+
+.side {
+    color: #3f51b5;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 7px;
+    margin-left: 7px;
+    margin-bottom: 7px;
+}
+
+.selectMarket {
+    margin-bottom: 20px;
+}
+
+.my-order {
+    background-color: #e1edf9;
+    color: #3f51b5;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 27px;
+    border-bottom: #3f51b5 1px solid;
+    padding-bottom: 8px;
+    height: 24px;
+    padding-top: 11px;
+    padding-left: 10px;
+}
+
+.forSpace {
+    width: 46px;
+}
+
+#cancel{
+    background-color: #e1edf9;
+    border: 0px solid;
+    color: #3f51b5;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 3px;
+    padding: 3px;
+    width: 46px;
+    cursor: pointer;
+}
