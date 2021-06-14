@@ -18,7 +18,7 @@ function App() {
     const UnsWon = 'uns-won';
     const SnuUns = 'snu-uns';
 
-    if(market) console.log(market.market.name)
+    //if(market) console.log(market.market.name)
 
     useEffect(() => {
         loadMarkets()
@@ -58,7 +58,6 @@ function App() {
     }
     
     const loginComplete = (name) => {
-        console.log(name);
         setUser(
             {name: name}
         );

@@ -48,7 +48,6 @@ const LoadOrder = () => {
 let ordersDiv;
 
 const MarketChange = (e) => {
-    console.log(e);
     setMarketName(e);
 };
 
@@ -69,8 +68,6 @@ const showObject = filterObject.map((order) => {
     )
     
     })
-
-console.log(orderList);
 
     return (
         <div>
