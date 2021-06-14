@@ -18,8 +18,8 @@ const OrderForm = (props) => {
                 if(marketName === 'snu-won' || marketName === 'uns-won') {
                     if(price>= 1 && price % 10 === 0 && price!= null) {
                         if(quantity>= 1 && quantity != null) {
-                            const response = await order(price, quantity, props.marketName, side);
                             alert("주문이 완료되었습니다!")
+                            const response = await order(price, quantity, props.marketName, side);
                         } else {
                             alert("수량은 1개 이상 입력해주세요.")
                         }
@@ -27,8 +27,8 @@ const OrderForm = (props) => {
                 } else if (marketName === 'snu-uns') {
                     if(price >= 1 && price!= null) {
                         if(quantity>= 1 && quantity != null) {
-                            const response = await order(price, quantity, props.marketName, side);
                             alert("주문이 완료되었습니다!")
+                            const response = await order(price, quantity, props.marketName, side);
                         } else {
                             alert("수량은 1개 이상 입력해주세요.")
                         }

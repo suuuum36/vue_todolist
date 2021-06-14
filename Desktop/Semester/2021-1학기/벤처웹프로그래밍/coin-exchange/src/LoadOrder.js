@@ -56,13 +56,15 @@ const filterObject = orders.filter((order)=>
 )
 
 let orderList = [];
+
 const showObject = filterObject.map((order) => {
     orderList.push(
-    <div className="orderList"> 
+    <div className={order.side==='buy'? 'orderList buyList' : 'orderList sellList'}> 
         <div showStatus = {showStatus(order.status)} >{statusText} </div>
         <div>{order.market.name}</div>
         <div>{order.price}</div>
         <div>{order.quantity}</div>
+        <div>{order.side === 'buy' ? '매수' : '매도'}</div>
         {order.status === 0 ? <button className={order._id} id="cancel" onClick={e=> DeleteOrder(e.target.className)}>취소</button> : <div className="forSpace"></div>}
     </div>
     )
@@ -83,6 +85,7 @@ const showObject = filterObject.map((order) => {
                 <div>시장</div>
                 <div>체결액</div>
                 <div>체결량</div>
+                <div>매수/매도</div>
                 <div>취소</div>
             </div>
             {orderList}

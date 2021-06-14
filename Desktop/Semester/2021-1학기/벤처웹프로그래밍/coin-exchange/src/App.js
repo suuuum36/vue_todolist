@@ -28,6 +28,11 @@ function App() {
     }, []);
 
     useEffect(() => {
+        loadMarket(currentMarket)
+                .then(_market => {
+                    setMarket(_market);
+                })
+
         const update = setInterval(() => {
             loadMarket(currentMarket)
                 .then(_market => {
@@ -66,7 +71,7 @@ function App() {
         Welcome = <div className="profileDiv"> <span className="user"> {user.name} </span> <span>님 환영합니다.</span> <Button onClick={logout}>로그아웃</Button> </div>
         AccountShow = ''
         AssetsShow = <Assets/>
-        MakeOrder = <OrderForm marketName={market.market.name} userName={user.name}/>
+        MakeOrder = <OrderForm marketName={currentMarket} userName={user.name}/>
         MyOrder = <LoadOrder/>
 
         } else {
