@@ -12,7 +12,7 @@ function App() {
     const [user, setUser] = useState(null);
     const [markets, setMarkets] = useState([]);
     const [market, setMarket] = useState(null);
-
+    const [currentMarket, setcurrentMarket] = useState('snu-won');
 
     const SnuWon = 'snu-won';
     const UnsWon = 'uns-won';
@@ -28,34 +28,17 @@ function App() {
     }, []);
 
     useEffect(() => {
-        loadMarket(SnuWon)
-            .then(_market => {
-                setMarket(_market);
-            })
-    }, []);
-
-
-    function ShowOrderBook1 () {
-        loadMarket(SnuWon)
-            .then(_market => {
-                setMarket(_market);
-            })
+        const update = setInterval(() => {
+            loadMarket(currentMarket)
+                .then(_market => {
+                    setMarket(_market);
+                })
+        }, 5000);
         
-    }
+        return () => clearInterval(update);
 
-    function ShowOrderBook2 () {
-        loadMarket(UnsWon)
-            .then(_market => {
-                setMarket(_market);
-            })
-    }
+    }, [currentMarket]);
 
-    function ShowOrderBook3 () {
-        loadMarket(SnuUns)
-            .then(_market => {
-                setMarket(_market);
-            })
-    }
     
     const loginComplete = (name) => {
         setUser(
@@ -106,9 +89,9 @@ function App() {
                 <div id="contents">
                     <div className="orderbookDiv">
                         <ButtonGroup className="orderBookButton" color="primary" aria-label="outlined primary button group">
-                            <Button onClick = {ShowOrderBook1}>SNU-WON</Button>
-                            <Button onClick = {ShowOrderBook2}>UNS-WON</Button>
-                            <Button onClick = {ShowOrderBook3}>SNU-UNS</Button>
+                            <Button onClick = {()=> setcurrentMarket(SnuWon)}>SNU-WON</Button>
+                            <Button onClick = {()=> setcurrentMarket(UnsWon)}>UNS-WON</Button>
+                            <Button onClick = {()=> setcurrentMarket(SnuUns)}>SNU-UNS</Button>
                         </ButtonGroup>
 
                         {market &&
